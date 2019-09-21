@@ -48,8 +48,8 @@ some notes regarding the chromebook snow:
 - mali support was taken from this tree https://github.com/mihailescu2m/linux/tree/odroidxu4-5.0.y
   - some commits not relevant were reverted (c8dee8578a8342bc33c48384e198aadd76ac72f6 699b5f261f2106b1314a293784b94a186c786b9b)
   - some changes required for v5.2 were added
-  - the gpu node in the dts was taken from a usggerstion of the panfrost irc
-  - clock and iterrupt names were changed to match the suggeted dts gpu node for panfrost (so that both can use the same dtb)
+  - the gpu node in the dts was taken from a suggestion of the panfrost irc
+  - clock and iterrupt names were changed to match the suggested dts gpu node for panfrost (so that both can use the same dtb)
 - on sd cards and emmc better create filesystems with journaling disabled (this should extend their life time)
   - mkfs -t ext4 -O ^has_journal -L somelabel /dev/somedevice
 - better touchpad support - /etc/X11/xorg.conf.d/50-touchpad.conf:
