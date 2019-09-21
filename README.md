@@ -15,26 +15,26 @@ some notes regarding the chromebook snow:
   alsaucm -c Snow-I2S-MAX98095
 - make pulseaudio work:
   - /etc/asound..conf
---- snip ---
-pcm.!default {
+  ```
+  pcm.!default {
 	type hw
 	card 0
-}
+  }
 
-ctl.!default {
+  ctl.!default {
 	type hw           
 	card 0
-}
---- snip ---
+  }
+  ```
   - /etc/pulse/default.pa
---- snip ---
-...
-# local additions
-load-module module-alsa-sink device=sysdefault
-#load-module module-alsa-source device=sysdefault
-#load-module module-alsa-sink device=hw:0,0
-#load-module module-alsa-source device=hw:0,0
---- snip ---
+  ```
+  ...
+  # local additions
+  load-module module-alsa-sink device=sysdefault
+  #load-module module-alsa-source device=sysdefault
+  #load-module module-alsa-sink device=hw:0,0
+  #load-module module-alsa-source device=hw:0,0  
+  ```
 - disable usb3 (does not work with sleep/wakeup) - done by disable-usb3.patch
   - set status = "disabled"; for usb3-vbus-en, usb_dwc3, phy@12100000 (samsung,exynos5250-usbdrd-phy) - leave in: ohci, ehci & usb2-phy
 - only light sleep/wake as full does not work properly (will survive about a day with full battery)
@@ -53,7 +53,7 @@ load-module module-alsa-sink device=sysdefault
 - on sd cards and emmc better create filesystems with journaling disabled (this should extend their life time)
   - mkfs -t ext4 -O ^has_journal -L somelabel /dev/somedevice
 - better touchpad support - /etc/X11/xorg.conf.d/50-touchpad.conf:
---- snip ---
+```
 Section "InputClass"
         Identifier              "touchpad"
         MatchIsTouchpad         "on"
@@ -73,7 +73,7 @@ Section "InputClass"
 	Option "EmulateThirdButtonTimeout" "750"
 	Option "EmulateThirdButtonThreshold" "30"
 EndSection
---- snip ---
+```
 
 using gles or opengl with special rk3288 armsoc xorg server:
 - cd / ; tar xzf armsoc-xorg-ubuntu-18.04.tar.gz (for ubuntu 18.04)
