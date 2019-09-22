@@ -11,7 +11,7 @@ patch -p1 < /compile/doc/stable/misc.exy/snow-v4-19-suspend-fix.patch
 patch -p1 < /compile/doc/stable/misc.exy/disable-usb3.patch
 # add mali support
 patch -p1 < /compile/doc/stable/misc.cbe/exynos5250-mali-complete.patch
-tar xzf /compile/doc/stable/misc.cbe/exynos5250-mali-complete.patch
+cp -r /compile/doc/stable/misc.cbe/exynos5250-mali-complete/drivers/gpu/arm drivers/gpu
 
 cp /compile/doc/stable/config.cbe /compile/source/linux-stable/.config
 cd /compile/source/linux-stable
