@@ -12,8 +12,8 @@ index 81be6f781f0b..0ec20342ebec 100644
  
 diff --git a/drivers/mfd/cros_ec.c b/drivers/mfd/cros_ec.c
 index 65a9757a6d21..58e05069163e 100644
---- a/drivers/mfd/cros_ec.c
-+++ b/drivers/mfd/cros_ec.c
+--- a/drivers/platform/chrome/cros_ec.c
++++ b/drivers/platform/chrome/cros_ec.c
 @@ -216,7 +216,7 @@ int cros_ec_suspend(struct cros_ec_device *ec_dev)
  }
  EXPORT_SYMBOL(cros_ec_suspend);
