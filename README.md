@@ -1,3 +1,5 @@
+UPDATE: see here for latest images - https://github.com/hexdump0815/imagebuilder
+
 some notes regarding the chromebook snow:
 
 - active support from google for the snow chromebooks (samsung xe303c12) ended beginning of 2019, so they might be around for cheap
